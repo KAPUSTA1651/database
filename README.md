@@ -11,34 +11,34 @@
 
 from (Название мой библиотеки 'Она ещё в процесе разработки') import Database
 
-# Создание базы данных и таблицы
+ #Создание базы данных и таблицы
 db = Database('example.db')
 
-# Структура таблицы
+ #Структура таблицы
 columns = {
     'id': 'INTEGER PRIMARY KEY AUTOINCREMENT',
     'name': 'TEXT',
     'age': 'INTEGER'
 }
 
-# Создание таблицы
+ #Создание таблицы
 db.create_table('users', columns)
 
-# Вставка данных
+ #Вставка данных
 db.insert('users', (None, 'Alice', 30))
 db.insert('users', (None, 'Bob', 25))
 
-# Получение и вывод всех данных
+ #Получение и вывод всех данных
 users = db.fetch_all('users')
 print(users)
 
-# Обновление данных
+ #Обновление данных
 db.update('users', {'age': 31}, 'name = "Alice"')
 
-# Удаление данных
+ #Удаление данных
 db.delete('users', 'name = "Bob"')
 
-# Закрытие программы
+ #Закрытие программы
 db.close()
 
 
